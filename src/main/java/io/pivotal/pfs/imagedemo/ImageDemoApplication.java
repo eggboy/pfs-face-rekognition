@@ -4,6 +4,7 @@ import io.pivotal.pfs.imagedemo.faces.DetectFaces;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -17,6 +18,7 @@ public class ImageDemoApplication {
 		SpringApplication.run(ImageDemoApplication.class, args);
 	}
 
+	@Bean
 	Function<String, String> getAgeRangeFromImage() {
 		return (image) -> detectFaces.requestFaceDetection(image)
 				.getFaceDetails()
