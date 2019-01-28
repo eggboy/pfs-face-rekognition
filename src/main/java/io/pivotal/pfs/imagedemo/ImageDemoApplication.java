@@ -23,7 +23,7 @@ public class ImageDemoApplication {
 		return (image) -> detectFaces.requestFaceDetection(image)
 				.getFaceDetails()
 				.stream()
-				.map(fd -> "Your Age Range is between " + fd.getAgeRange().getLow() + " and " + fd.getAgeRange().getHigh()+"\n")
+				.map(fd ->  "You must be " + fd.getGender().getValue() +"(Confidence: " + fd.getGender().getConfidence() + ", And You look around " + fd.getAgeRange().getLow() + " to " + fd.getAgeRange().getHigh()+" years old. \n")
 				.collect(Collectors.joining());
 	}
 }

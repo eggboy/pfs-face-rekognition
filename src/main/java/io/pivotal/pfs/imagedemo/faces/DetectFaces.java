@@ -2,9 +2,11 @@ package io.pivotal.pfs.imagedemo.faces;
 
 import com.amazonaws.services.rekognition.AmazonRekognition;
 import com.amazonaws.services.rekognition.model.*;
+import lombok.Builder;
 import org.springframework.stereotype.Component;
 
 @Component
+@Builder
 public class DetectFaces {
 
     AmazonRekognition amazonRekognition;
